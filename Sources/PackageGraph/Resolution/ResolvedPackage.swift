@@ -50,6 +50,12 @@ public struct ResolvedPackage {
 
     /// The list of platforms that are supported by this package.
     public let supportedPlatforms: [SupportedPlatform]
+    
+	/// The license of the package.
+    public let license: License?
+    
+	/// The list of licenses this package chosses to accept.
+    public let acceptableLicenses: [License]?
 
     /// If the given package's source is a registry release, this provides additional metadata and signature information.
     public let registryMetadata: RegistryReleaseMetadata?
@@ -66,7 +72,9 @@ public struct ResolvedPackage {
         modules: IdentifiableSet<ResolvedModule>,
         products: [ResolvedProduct],
         registryMetadata: RegistryReleaseMetadata?,
-        platformVersionProvider: PlatformVersionProvider
+        platformVersionProvider: PlatformVersionProvider,
+        license: License?,
+        acceptableLicenses: [License]?
     ) {
         self.underlying = underlying
         self.products = products
@@ -77,6 +85,8 @@ public struct ResolvedPackage {
         self.registryMetadata = registryMetadata
         self.platformVersionProvider = platformVersionProvider
         self.enabledTraits = enabledTraits
+        self.license = license
+        self.acceptableLicenses = acceptableLicenses
     }
 
     public func getSupportedPlatform(for platform: Platform, usingXCTest: Bool) -> SupportedPlatform {

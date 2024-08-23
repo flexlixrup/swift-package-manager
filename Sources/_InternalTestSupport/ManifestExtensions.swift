@@ -32,7 +32,9 @@ extension Manifest {
         dependencies: [PackageDependency] = [],
         products: [ProductDescription] = [],
         targets: [TargetDescription] = [],
-        traits: Set<TraitDescription> = []
+        traits: Set<TraitDescription> = [],
+        license: License? = nil,
+        acceptableLicenses: [License]? = nil
     ) -> Manifest {
         Self.createManifest(
             displayName: displayName,
@@ -51,7 +53,9 @@ extension Manifest {
             dependencies: dependencies,
             products: products,
             targets: targets,
-            traits: traits
+            traits: traits,
+            license: license,
+            acceptableLicenses: acceptableLicenses
         )
     }
 
@@ -70,7 +74,9 @@ extension Manifest {
         dependencies: [PackageDependency] = [],
         products: [ProductDescription] = [],
         targets: [TargetDescription] = [],
-        traits: Set<TraitDescription> = []
+        traits: Set<TraitDescription> = [],
+        license: License? = nil,
+        acceptableLicenses: [License]? = nil
     ) -> Manifest {
         Self.createManifest(
             displayName: displayName,
@@ -89,7 +95,9 @@ extension Manifest {
             dependencies: dependencies,
             products: products,
             targets: targets,
-            traits: traits
+            traits: traits,
+            license: license,
+            acceptableLicenses: acceptableLicenses
         )
     }
 
@@ -107,7 +115,9 @@ extension Manifest {
         swiftLanguageVersions: [SwiftLanguageVersion]? = nil,
         dependencies: [PackageDependency] = [],
         products: [ProductDescription] = [],
-        targets: [TargetDescription] = []
+        targets: [TargetDescription] = [],
+        license: License? = nil,
+        acceptableLicenses: [License]? = nil
     ) -> Manifest {
         Self.createManifest(
             displayName: displayName,
@@ -125,7 +135,9 @@ extension Manifest {
             swiftLanguageVersions: swiftLanguageVersions,
             dependencies: dependencies,
             products: products,
-            targets: targets
+            targets: targets,
+            license: license,
+            acceptableLicenses: acceptableLicenses
         )
     }
 
@@ -144,7 +156,9 @@ extension Manifest {
         swiftLanguageVersions: [SwiftLanguageVersion]? = nil,
         dependencies: [PackageDependency] = [],
         products: [ProductDescription] = [],
-        targets: [TargetDescription] = []
+        targets: [TargetDescription] = [],
+        license: License? = nil,
+        acceptableLicenses: [License]? = nil
     ) -> Manifest {
         Self.createManifest(
             displayName: displayName,
@@ -162,7 +176,9 @@ extension Manifest {
             swiftLanguageVersions: swiftLanguageVersions,
             dependencies: dependencies,
             products: products,
-            targets: targets
+            targets: targets,
+            license: license,
+            acceptableLicenses: acceptableLicenses
         )
     }
 
@@ -181,7 +197,9 @@ extension Manifest {
         swiftLanguageVersions: [SwiftLanguageVersion]? = nil,
         dependencies: [PackageDependency] = [],
         products: [ProductDescription] = [],
-        targets: [TargetDescription] = []
+        targets: [TargetDescription] = [],
+        license: License? = nil,
+        acceptableLicenses: [License]? = nil
     ) -> Manifest {
         Self.createManifest(
             displayName: displayName,
@@ -220,7 +238,9 @@ extension Manifest {
         dependencies: [PackageDependency] = [],
         products: [ProductDescription] = [],
         targets: [TargetDescription] = [],
-        traits: Set<TraitDescription> = []
+        traits: Set<TraitDescription> = [],
+        license: License? = nil,
+        acceptableLicenses: [License]? = nil
     ) -> Manifest {
         return Manifest(
             displayName: displayName,
@@ -240,7 +260,9 @@ extension Manifest {
             dependencies: dependencies,
             products: products,
             targets: targets,
-            traits: traits
+            traits: traits,
+            license: license,
+            acceptableLicenses: acceptableLicenses
         )
     }
 
@@ -263,7 +285,9 @@ extension Manifest {
             dependencies: self.dependencies,
             products: self.products,
             targets: self.targets,
-            traits: self.traits
+            traits: self.traits,
+            license: self.license,
+            acceptableLicenses: self.acceptableLicenses
         )
     }
 }

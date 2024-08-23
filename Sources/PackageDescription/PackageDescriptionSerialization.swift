@@ -264,7 +264,16 @@ enum Serialization {
         let targets: [String]
         let productType: ProductType
     }
-
+    
+    // MARK: - license serialization
+    enum License: Codable {
+        case mit(url: String)
+        case apache(url: String)
+        case gpl(url: String)
+        case custom(url: String)
+        case none
+    }
+    
     // MARK: - trait serialization
 
     struct Trait: Hashable, Codable {
@@ -296,6 +305,8 @@ enum Serialization {
         let products: [Product]
         let traits: Set<Trait>?
         let dependencies: [PackageDependency]
+        let license: License?
+        let acceptableLicenses: [License]?
         let swiftLanguageVersions: [SwiftVersion]?
         let cLanguageStandard: CLanguageStandard?
         let cxxLanguageStandard: CXXLanguageStandard?

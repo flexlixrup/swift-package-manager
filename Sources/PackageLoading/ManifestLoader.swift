@@ -449,7 +449,9 @@ public final class ManifestLoader: ManifestLoaderProtocol {
                     dependencies: parsedManifest.dependencies,
                     products: products,
                     targets: targets,
-                    traits: parsedManifest.traits
+                    traits: parsedManifest.traits,
+                    license: parsedManifest.license,
+                    acceptableLicenses: parsedManifest.acceptableLicenses
                 )
 
                 // Inform the delegate.

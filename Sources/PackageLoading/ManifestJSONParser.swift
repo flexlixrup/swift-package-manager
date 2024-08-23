@@ -46,6 +46,8 @@ enum ManifestJSONParser {
         var providers: [SystemPackageProviderDescription]?
         var products: [ProductDescription] = []
         var traits: Set<TraitDescription> = []
+        var license: License?
+        var acceptableLicenses: [License]?
         var cxxLanguageStandard: String?
         var cLanguageStandard: String?
     }

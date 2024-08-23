@@ -1250,6 +1250,10 @@ private final class ResolvedPackageBuilder: ResolvedBuilder<ResolvedPackage> {
     var registryMetadata: RegistryReleaseMetadata?
 
     let platformVersionProvider: PlatformVersionProvider
+	
+	let license: License? = nil
+	
+	let acceptableLicenses: [License]? = nil
 
     init(
         _ package: Package,
@@ -1281,7 +1285,9 @@ private final class ResolvedPackageBuilder: ResolvedBuilder<ResolvedPackage> {
             modules: modules,
             products: products,
             registryMetadata: self.registryMetadata,
-            platformVersionProvider: self.platformVersionProvider
+            platformVersionProvider: self.platformVersionProvider,
+			license: self.license,
+			acceptableLicenses: self.acceptableLicenses
         )
     }
 }

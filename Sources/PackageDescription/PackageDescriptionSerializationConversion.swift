@@ -386,6 +386,24 @@ extension Serialization.Trait {
     }
 }
 
+extension Serialization.License {
+    init(_ license: PackageDescription.License) {
+        switch license {
+        case .mit(let url): self = .mit(url: url)
+        case .apache(let url): self = .apache(url: url)
+        case .gpl(let url): self = .gpl(url: url)
+        case .custom(let url): self = .custom(url: url)
+        case .none: self = .none
+        }
+    }
+}
+
+extension [Serialization.License] {
+    init(_ acceptableLicenses: [PackageDescription.License]) {
+        self = acceptableLicenses.map { .init($0) }
+    }
+}
+
 extension Serialization.Package {
     init(_ package: PackageDescription.Package) {
         self.name = package.name
@@ -397,6 +415,8 @@ extension Serialization.Package {
         self.products = package.products.map { .init($0) }
         self.traits = Set(package.traits.map { Serialization.Trait($0) })
         self.dependencies = package.dependencies.map { .init($0) }
+        self.license = package.license.map { .init($0) }
+        self.acceptableLicenses = package.acceptableLicenses.map { .init($0) }
         self.swiftLanguageVersions = package.swiftLanguageModes?.map { .init($0) }
         self.cLanguageStandard = package.cLanguageStandard.map { .init($0) }
         self.cxxLanguageStandard = package.cxxLanguageStandard.map { .init($0) }

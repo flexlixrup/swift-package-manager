@@ -110,7 +110,9 @@ final class ClangTargetBuildDescriptionTests: XCTestCase {
                            modules: .init([target]),
                            products: [],
                            registryMetadata: nil,
-                           platformVersionProvider: .init(implementation: .minimumDeploymentTargetDefault)),
+                           platformVersionProvider: .init(implementation: .minimumDeploymentTargetDefault),
+						   license: nil,
+						   acceptableLicenses: nil),
             target: target,
             toolsVersion: .current,
             buildParameters: buildParameters ?? mockBuildParameters(

@@ -107,6 +107,12 @@ public final class Package {
 
     /// The list of package dependencies.
     public var dependencies: [Dependency]
+    
+	/// The license of this package
+    public var license: License?
+    
+	/// The list of licenses the package chooses to accept in its dependencies
+    public var acceptableLicenses: [License]?
 
     /// The list of Swift language modes with which this package is compatible.
     public var swiftLanguageModes: [SwiftLanguageMode]?
@@ -147,6 +153,8 @@ public final class Package {
         products: [Product] = [],
         dependencies: [Dependency] = [],
         targets: [Target] = [],
+        license: License? = nil,
+        acceptableLicenses: [License]? = nil,
         swiftLanguageVersions: [Int]? = nil,
         cLanguageStandard: CLanguageStandard? = nil,
         cxxLanguageStandard: CXXLanguageStandard? = nil
@@ -158,6 +166,8 @@ public final class Package {
         self.dependencies = dependencies
         self.targets = targets
         self.traits = []
+        self.license = license
+        self.acceptableLicenses = acceptableLicenses
         self.swiftLanguageModes = swiftLanguageVersions.map{ $0.map{ .version("\($0)") } }
         self.cLanguageStandard = cLanguageStandard
         self.cxxLanguageStandard = cxxLanguageStandard
@@ -186,6 +196,8 @@ public final class Package {
         products: [Product] = [],
         dependencies: [Dependency] = [],
         targets: [Target] = [],
+        license: License? = nil,
+        acceptableLicenses: [License]? = nil,
         swiftLanguageVersions: [SwiftVersion]? = nil,
         cLanguageStandard: CLanguageStandard? = nil,
         cxxLanguageStandard: CXXLanguageStandard? = nil
@@ -197,6 +209,8 @@ public final class Package {
         self.dependencies = dependencies
         self.targets = targets
         self.traits = []
+        self.license = license
+        self.acceptableLicenses = acceptableLicenses
         self.swiftLanguageModes = swiftLanguageVersions
         self.cLanguageStandard = cLanguageStandard
         self.cxxLanguageStandard = cxxLanguageStandard
@@ -227,6 +241,8 @@ public final class Package {
         products: [Product] = [],
         dependencies: [Dependency] = [],
         targets: [Target] = [],
+        license: License? = nil,
+        acceptableLicenses: [License]? = nil,
         swiftLanguageVersions: [SwiftVersion]? = nil,
         cLanguageStandard: CLanguageStandard? = nil,
         cxxLanguageStandard: CXXLanguageStandard? = nil
@@ -239,6 +255,8 @@ public final class Package {
         self.dependencies = dependencies
         self.targets = targets
         self.traits = []
+        self.license = license
+        self.acceptableLicenses = acceptableLicenses
         self.swiftLanguageModes = swiftLanguageVersions
         self.cLanguageStandard = cLanguageStandard
         self.cxxLanguageStandard = cxxLanguageStandard
@@ -272,6 +290,8 @@ public final class Package {
         products: [Product] = [],
         dependencies: [Dependency] = [],
         targets: [Target] = [],
+        license: License? = nil,
+        acceptableLicenses: [License]? = nil,
         swiftLanguageVersions: [SwiftVersion]? = nil,
         cLanguageStandard: CLanguageStandard? = nil,
         cxxLanguageStandard: CXXLanguageStandard? = nil
@@ -285,6 +305,8 @@ public final class Package {
         self.dependencies = dependencies
         self.targets = targets
         self.traits = []
+        self.license = license
+        self.acceptableLicenses = acceptableLicenses
         self.swiftLanguageModes = swiftLanguageVersions
         self.cLanguageStandard = cLanguageStandard
         self.cxxLanguageStandard = cxxLanguageStandard
@@ -316,6 +338,8 @@ public final class Package {
         products: [Product] = [],
         dependencies: [Dependency] = [],
         targets: [Target] = [],
+        license: License? = nil,
+        acceptableLicenses: [License]? = nil,
         swiftLanguageModes: [SwiftLanguageMode]? = nil,
         cLanguageStandard: CLanguageStandard? = nil,
         cxxLanguageStandard: CXXLanguageStandard? = nil
@@ -329,6 +353,8 @@ public final class Package {
         self.dependencies = dependencies
         self.targets = targets
         self.traits = []
+        self.license = license
+        self.acceptableLicenses = acceptableLicenses
         self.swiftLanguageModes = swiftLanguageModes
         self.cLanguageStandard = cLanguageStandard
         self.cxxLanguageStandard = cxxLanguageStandard
@@ -364,6 +390,8 @@ public final class Package {
         traits: Set<Trait> = [],
         dependencies: [Dependency] = [],
         targets: [Target] = [],
+        license: License? = nil,
+        acceptableLicenses: [License]? = nil,
         swiftLanguageModes: [SwiftLanguageMode]? = nil,
         cLanguageStandard: CLanguageStandard? = nil,
         cxxLanguageStandard: CXXLanguageStandard? = nil
@@ -377,6 +405,8 @@ public final class Package {
         self.traits = traits
         self.dependencies = dependencies
         self.targets = targets
+        self.license = license
+        self.acceptableLicenses = acceptableLicenses
         self.swiftLanguageModes = swiftLanguageModes
         self.cLanguageStandard = cLanguageStandard
         self.cxxLanguageStandard = cxxLanguageStandard
